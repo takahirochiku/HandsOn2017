@@ -1,0 +1,28 @@
+<div>
+  <span *ngFor="let b of books">
+    <a href="#" (click)="onclick(b)">{{b.title}}</a>
+  </span>
+</div>
+<hr />
+<!-- <edit-book [item]="selected" (edited)="onedited($event)">
+</edit-book> -->
+<p>編集中の書籍1：{{edit.item?.title}}</p>
+<p>編集中の書籍1の1：{{edit.item?.title}}</p>
+<edit-book #edit [item]="selected" (edited)="onedited($event)">
+</edit-book>
+
+<hr>
+<hr>
+
+<form>
+  <fieldset>
+    <input type="search" name="q" autocomplete="on" list="keywords">
+    <datalist id="keywords">
+      <option [value]=searchWord></option>
+      <!-- <option value="ウィキペディア">
+        <option value="ウィルス対策">
+          <option value="ウィンドウズ"> -->
+    </datalist>
+    <input type="submit" value="送信">
+  </fieldset>
+</form>
